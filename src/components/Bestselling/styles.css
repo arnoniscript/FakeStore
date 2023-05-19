@@ -1,0 +1,29 @@
+.containerbody {
+    height: 532px;
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 3% 0% 3% 0%;
+    justify-content: space-around;
+
+}
+
+.Bestselling {
+    width: 25%;
+    font-family: 'Poppins', sans-serif;
+    
+    font-weight: 700px;
+    font-size: 60px;
+    align-items: left;
+
+
+}
+
+.Showitem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+
+}
