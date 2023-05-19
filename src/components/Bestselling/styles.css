@@ -12,18 +12,79 @@
 .Bestselling {
     width: 25%;
     font-family: 'Poppins', sans-serif;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-weight: 700px;
-    font-size: 60px;
-    align-items: left;
+    font-size: 40px;
+    line-height: 48px;
+    
 
 
 }
 
-.Showitem {
+.description {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-  
+    flex-direction: column;
+    font-weight: 500px;
+    align-items: flex-end;
+    font-size: 20px;
+    line-height: 48px;
+    color: rgba(30, 30, 30, 0.5);
+}
 
+.Showitem img{
+    display: flex;
+    flex-direction: column;
+    width: 250.33px;
+    background: #B6B5B5;
+height: 363px;
+border-radius: 12px;
+align-items: center;
+
+}
+.itemname {
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+   font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+}
+
+.itemprice {
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+   font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+color: rgba(30, 30, 30, 0.5);
+}
+
+#mainbutton {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 24px;
+gap: 10px;
+width: 168px;
+height: 51px;
+background: #C1DCDC;
+border-radius: 8px;
+flex: none;
+order: 1;
+flex-grow: 0;
+border-color: #ffffff;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
 }
