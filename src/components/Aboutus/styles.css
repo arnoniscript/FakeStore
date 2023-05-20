@@ -1,0 +1,72 @@
+.principal {
+    height: 513px;
+    background-color: #c1dcdc;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.principal h1 {
+    font-family: 'Poppins';
+font-style: normal;
+position: relative;
+top: 0px;
+font-weight: 500;
+font-size: 32px;
+}
+
+.principal h2 {
+    font-family: 'Poppins';
+font-style: normal;
+position: relative;
+top: 0px;
+font-weight: 500;
+font-size: 18px;
+color: rgba(30, 30, 30, 0.5);
+}
+
+.services {
+    height: 513px;
+    background-color: #c1dcdc;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.services h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    position: relative;
+    top: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.services h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    position: relative;
+    top: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(30, 30, 30, 0.5);
+    text-align: center;
+    padding: 3% 3% 0% 3%;
+}
+
+.firstservice {
+    font-size: 40px;
+}
+
+.secondservice {
+    font-size: 40px;
+}
+.thirdservice {
+    font-size: 40px;
+}

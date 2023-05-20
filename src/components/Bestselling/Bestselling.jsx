@@ -16,6 +16,7 @@ Best Selling Plants</p>
       </figure>
       <figure className='Showitem'>
         <img src='03.jpg'></img>
+       
 <div className='itemname'>Plantinha 02</div>
 <div className='itemprice'>R$91,00</div>
       </figure>
