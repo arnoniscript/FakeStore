@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Header, Bestselling, Aboutus } from "./components";
+import { Header, Bestselling, Aboutus, HomeCategories } from "./components";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Bestselling />
       <Aboutus />
+      <HomeCategories />
     </div>
   );
 }
