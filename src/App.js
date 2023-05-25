@@ -1,14 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Header, Bestselling, Aboutus, HomeCategories } from "./components";
+import { Header, Footer } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./pages";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Bestselling />
-      <Aboutus />
-      <HomeCategories />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }

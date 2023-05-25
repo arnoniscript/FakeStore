@@ -1,4 +1,5 @@
 import './styles.css'
+import { BsArrowRight } from "react-icons/bs"
 
 const HomeCategories = () => {
     return( 
@@ -18,7 +19,8 @@ const HomeCategories = () => {
     <figure className='flex-container-item'><img src='03.jpg'></img>
     <div className='itemname'>Artificial Plants</div>
 <div className='itemprice'> </div></figure></div>
-
+<br></br>
+<div className='explore'>Explore <BsArrowRight /></div>
             </div>
 <div>
 

@@ -22,6 +22,8 @@ const Aboutus = () => {
                 <icon>  <FiPhoneOutgoing /></icon>
                  <h1>Large Assorment</h1>  <h2> We offer many different types of products with fewer variations in each category</h2></div>
             </div>
+
+           
         </div>
     )
 }
