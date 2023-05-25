@@ -1,6 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Header, Bestselling, Aboutus, HomeCategories } from "./components";
+import {
+  Header,
+  Bestselling,
+  Aboutus,
+  HomeCategories,
+  Footer,
+} from "./components";
 
 function App() {
   return (
@@ -9,6 +15,7 @@ function App() {
       <Bestselling />
       <Aboutus />
       <HomeCategories />
+      <Footer />
     </div>
   );
 }
