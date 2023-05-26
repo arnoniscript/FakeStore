@@ -1,7 +1,18 @@
 import './styles.css'
 import { BsArrowRight } from 'react-icons/bs';
+import { useState, useEffect } from "react";
+import { getTopSelling } from '../../services/products'
 
 const Bestselling = () => {
+    
+  const [products, setProducts] = useState();
+  useEffect(() => {
+    getTopSelling()
+      .then((response) => setProducts(response))
+      .catch((err) => alert(err));
+  }, []);
+
+
     return( 
       <body className='containerbody'>      <div className='Bestselling'> <p>
 Best Selling Plants</p>
