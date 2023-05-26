@@ -1,16 +1,19 @@
-import { Bestselling, Aboutus, HomeCategories } from '../../components'
-
+import {
+  Bestselling,
+  Aboutus,
+  HomeCategories,
+  TopSelling,
+} from "../../components";
 
 const Home = () => {
-  return(
+  return (
     <main>
-  
       <Bestselling />
       <Aboutus />
-      <HomeCategories />
-   
-    </main>
-  )
-}
 
-export default Home
+      <HomeCategories />
+    </main>
+  );
+};
+
+export default Home;
