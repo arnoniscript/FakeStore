@@ -1,0 +1,11 @@
+.containerbodyTopSelling {
+position: relative;
+width: 299.33px;
+height: 363px;
+flex-direction: row;
+
+}
+
+#topselling {
+flex-direction: row;
+}

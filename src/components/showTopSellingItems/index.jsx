@@ -12,7 +12,7 @@ const TopSelling = () => {
 
   return (
     <main>
-      <div className="showitem">
+      <div className="imageProductDetailContainer">
         {!products ? (
           <Loading />
         ) : (
