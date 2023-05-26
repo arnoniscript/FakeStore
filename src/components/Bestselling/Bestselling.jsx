@@ -1,10 +1,10 @@
-import './styles.css'
-import { BsArrowRight } from 'react-icons/bs';
+import "./styles.css";
+import { BsArrowRight } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import { getTopSelling } from '../../services/products'
-
+import { getTopSelling } from "../../services/products";
+import { cardBestSelling } from "./cardBestSelling";
+import { Loading } from "../LoadingCircle";
 const Bestselling = () => {
-    
   const [products, setProducts] = useState();
   useEffect(() => {
     getTopSelling()
@@ -12,35 +12,41 @@ const Bestselling = () => {
       .catch((err) => alert(err));
   }, []);
 
-
-    return( 
-      <body className='containerbody'>      <div className='Bestselling'> <p>
-Best Selling Plants</p>
-
-<div className="description"> <p>Easiest way to healthy life by buying your favorite plants </p></div>
-      <button id="mainbutton">See more <BsArrowRight /></button>
+  return (
+    <body className="containerbody">
+      {" "}
+      <div className="Bestselling">
+        {" "}
+        <p>Best Selling Plants</p>
+        <div className="description">
+          {" "}
+          <p>Easiest way to healthy life by buying your favorite plants </p>
+        </div>
+        <button id="mainbutton">
+          See more <BsArrowRight />
+        </button>
       </div>
-      <figure className='Showitem'>
-        <img src='03.jpg'></img>
-<div className='itemname'>Plantinha 01</div>
-<div className='itemprice'>R$948,00</div>
-      </figure>
-      <figure className='Showitem'>
-        <img src='03.jpg'></img>
-       
-<div className='itemname'>Plantinha 02</div>
-<div className='itemprice'>R$91,00</div>
-      </figure>
-      <figure className='Showitem'>
-        <img src='03.jpg'></img>
-<div className='itemname'>Plantinha 03</div>
-<div className='itemprice'>R$9448,00</div>
-      </figure>
-      
-      </body>
+      <div className="Showitem">
+        {!Bestselling ? (
+          <Loading />
+        ) : (
+          Bestselling?.map((product) => (
+            <cardBestSelling
+              key={product.id}
+              imageURL={product.image}
+              price={product.price.toFixed(2)}
+              title={product.title}
+            />
+          ))
+        )}
+      </div>
+      <div className="Showitem">
+        <img src="03.jpg"></img>
+        <div className="itemname">Plantinha 01</div>
+        <div className="itemprice">R$948,00</div>
+      </div>
+    </body>
+  );
+};
 
-      
-    )
-}
-
-export default Bestselling
+export { Bestselling, cardBestSelling };
