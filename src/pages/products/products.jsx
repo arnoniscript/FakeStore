@@ -12,20 +12,22 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="imageProductDetailContainer">
-      {!products ? (
-        <Loading />
-      ) : (
-        products?.map((product) => (
-          <ProductCardDetails
-            key={product.id}
-            imageURL={product.image}
-            price={product.price.toFixed(2)}
-            title={product.title}
-          />
-        ))
-      )}
-    </div>
+    <body>
+      <div className="imageProductDetailContainer">
+        {!products ? (
+          <Loading />
+        ) : (
+          products?.map((product) => (
+            <ProductCardDetails
+              key={product.id}
+              imageURL={product.image}
+              price={product.price.toFixed(2)}
+              title={product.title}
+            />
+          ))
+        )}
+      </div>
+    </body>
   );
 };
 export default Products;

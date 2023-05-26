@@ -5,6 +5,11 @@ async function getProducts() {
   return response.data;
 }
 
+const getProduct = async (id) => {
+  const response = await conection.get(`/products/${id}`);
+  return response.data;
+};
+
 async function getCategories() {
   const response = await conection.get("products/categories");
   return response.data;
@@ -15,4 +20,4 @@ async function getTopSelling() {
   return response.data;
 }
 
-export { getProducts, getCategories, getTopSelling };
+export { getProducts, getProduct, getCategories, getTopSelling };
