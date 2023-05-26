@@ -3,8 +3,8 @@ import React from "react";
 
 const CardBestSelling = ({ imageURL, title, price }) => {
   return (
-    <div className="container-ProductCardDetails">
-      <div className="showitem">
+    <body id="topselling">
+      <div className="Showitem">
         <img src={imageURL}></img>
       </div>
       <div className="itemname">
@@ -13,7 +13,7 @@ const CardBestSelling = ({ imageURL, title, price }) => {
       <div className="itemprice">
         <p>R$: {price}</p>
       </div>
-    </div>
+    </body>
   );
 };
 

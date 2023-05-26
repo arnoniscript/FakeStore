@@ -35,19 +35,25 @@
     color: rgba(30, 30, 30, 0.5);
 }
 
+
+.Showitem {
+align-items: center;
+width: 299.33px;
+flex-direction: row;
+
+}
+
 .Showitem img{
     display: flex;
-    flex-direction: column;
-    width: 250.33px;
-    background: #B6B5B5;
-height: 363px;
+    width: 299.33px;
+    height: 363px;
 border-radius: 12px;
-align-items: center;
+flex-wrap: wrap;
 
 }
 .itemname {
     display: flex;
-    flex-direction: column;
+   
    align-items: flex-start;
    font-family: 'Poppins';
 font-style: normal;
@@ -56,11 +62,13 @@ top: 3%;
 font-weight: 500;
 font-size: 18px;
 line-height: 27px;
+width: 299.33px;
+
 }
 
 .itemprice {
     display: flex;
-    flex-direction: column;
+ 
    align-items: flex-start;
    font-family: 'Poppins';
 font-style: normal;

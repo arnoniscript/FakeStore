@@ -8,9 +8,11 @@ import {
 const Home = () => {
   return (
     <main>
-      <Bestselling />
+      <div className="containerbody">
+        <Bestselling />
+        <TopSelling />
+      </div>
       <Aboutus />
-
       <HomeCategories />
     </main>
   );
