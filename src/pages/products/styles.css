@@ -1,0 +1,11 @@
+.imageProductDetailContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px 20px 20px 20px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+  
+}
