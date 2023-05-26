@@ -2,7 +2,7 @@ import "./styles.css";
 const ProductCardDetails = ({ imageURL, title, price }) => {
   return (
     <div className="container-ProductCardDetails">
-      <div className="imageProductDetails">
+      <div className="Showitem">
         <img src={imageURL}></img>
       </div>
       <div className="detailsProductDetails">
