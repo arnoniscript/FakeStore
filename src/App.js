@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Header, Footer } from "./components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, Products } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </BrowserRouter>
       <Footer />
