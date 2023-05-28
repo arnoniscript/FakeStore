@@ -1,0 +1,37 @@
+.results-list {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px #ddd;
+    border-radius: 10px;
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: scroll;
+    /* scrollbar-width: thin; */
+    /* scrollbar-color: #888888 #dddddd; */
+  }
+  .results-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .results-list::-webkit-scrollbar-track {
+    background-color: #dddddd;
+  }
+  
+  .results-list::-webkit-scrollbar-thumb {
+    background-color: #888888;
+  }
+  
+  .results-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+  }
+  
+  /* CSS For SearchResult.jsx  */
+  
+  .search-result {
+    padding: 10px 20px;
+  }
+  .search-result:hover {
+    background-color: #efefef;
+  }

@@ -7,6 +7,8 @@ import ProductCardDetails from "./ProductCardDetails/ProductCardDetails";
 import Loading from "./Bestselling";
 import CardBestSelling from "./cardBestSelling";
 import TopSelling from "./showTopSellingItems";
+import SearchBar from "./SearchBar/SearchBar";
+import SearchResultList from "./SearchBar/SearchResultList";
 export {
   Header,
   Bestselling,
@@ -17,4 +19,6 @@ export {
   Loading,
   CardBestSelling,
   TopSelling,
+  SearchBar,
+  SearchResultList,
 };
