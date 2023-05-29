@@ -5,12 +5,16 @@ import {
   Loading,
   SearchBar,
   SearchResultList,
+  PageTitle,
+  SearchCategoriesBar,
+  CategoriesResultsList,
 } from "../../components";
 import "./styles.css";
 
 const Products = () => {
   const [products, setProducts] = useState();
   const [results, setResults] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     getProducts()
       .then((response) => setProducts(response))
@@ -20,11 +24,18 @@ const Products = () => {
   return (
     <body>
       <div className="toppingpage">
-        <div className="App">
+        <div className="searchtopcontainer">
           <div className="search-bar-container">
             <SearchBar setResults={setResults} />
             <SearchResultList results={results} />
           </div>
+          <div className="search-bar-container">
+            <SearchCategoriesBar setResults={setCategories} />
+            <CategoriesResultsList results={categories} />
+          </div>
+        </div>
+        <div className="pageinformation">
+          <PageTitle title="Products List" />
         </div>
       </div>
 
@@ -33,12 +44,14 @@ const Products = () => {
           <Loading />
         ) : (
           products?.map((product) => (
-            <ProductCardDetails
-              key={product.id}
-              imageURL={product.image}
-              price={product.price.toFixed(2)}
-              title={product.title}
-            />
+            <a href={`/products/${product.id}`}>
+              <ProductCardDetails
+                key={product.id}
+                imageURL={product.image}
+                price={product.price.toFixed(2)}
+                title={product.title}
+              />
+            </a>
           ))
         )}
       </div>

@@ -1,0 +1,27 @@
+.title-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pagetitle {
+display: flex;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 48px;
+color: #1E1E1E;
+justify-content: center;
+}
+
+.pagesubtitle {
+display: flex;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+color: rgba(30, 30, 30, 0.5);
+justify-content: center;
+}
