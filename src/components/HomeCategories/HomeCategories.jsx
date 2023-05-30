@@ -6,9 +6,9 @@ import { getCategories, getProducts } from "../../services/products";
 import { useState, useEffect } from "react";
 
 const HomeCategories = () => {
-  const [categories, setCategories] = useState();
-  const [exhibitedProducts, setExhibitedProducts] = useState();
-  const [products, setProducts] = useState();
+  const [categories, setCategories] = useState([]);
+  const [exhibitedProducts, setExhibitedProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts()
@@ -17,41 +17,42 @@ const HomeCategories = () => {
         setExhibitedProducts(response.slice(0, 3));
       })
       .catch((err) => alert(err));
+
     getCategories()
       .then((response) => {
         setCategories(response);
       })
       .catch((err) => alert(err));
   }, []);
+
   const getFirstImage = (category) => {
-    const result = products?.filter((el) => el.category === category);
+    const result = products.filter((el) => el.category === category);
     return result[0]?.image;
   };
 
   return (
-    <body>
+    <div>
       <div className="principalwhite">
-        <h1> Categories </h1>
-        <h2> Find what you are looking for </h2>
-        <br></br>
+        <h1>Categories</h1>
+        <h2>Find what you are looking for</h2>
+        <br />
         <div className="flex-container">
           <div className="homeCategoriesDisplay">
-            {categories?.map((category) => (
+            {categories.map((category) => (
               <ProductCardDetails
-                key={category}
-                imageURL={getFirstImage(category)}
-                title={category}
+                key={category.id}
+                imageURL={getFirstImage(category.category)}
+                title={category.category}
               />
             ))}
           </div>
         </div>
-        <br></br>
+        <br />
         <div className="explore">
           Explore <BsArrowRight />
         </div>
       </div>
-      <div></div>
-    </body>
+    </div>
   );
 };
 

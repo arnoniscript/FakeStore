@@ -3,8 +3,9 @@ import { getCategories } from "../../services/products";
 import { useState, useEffect, useParams } from "react";
 import { ProductCardDetails, PageTitle, Loading } from "../../components";
 
-const Categories = (info) => {
+const Categories = () => {
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     getCategories()
       .then((response) => setCategories(response))
@@ -12,24 +13,21 @@ const Categories = (info) => {
   }, []);
 
   return (
-    <body>
+    <div>
       <div className="pageinformation">
         <PageTitle title="Categories List" />
       </div>
 
       <div className="imageProductDetailContainer">
-        {!categories ? (
-          <Loading />
-        ) : (
-          categories.map((categoryItem) => (
-            <ProductCardDetails
-              key={categoryItem.id}
-              title={categoryItem.category}
-            />
+        {categories.length > 0 ? (
+          categories.map((category) => (
+            <ProductCardDetails key={category.id} title={category.category} />
           ))
+        ) : (
+          <Loading />
         )}
       </div>
-    </body>
+    </div>
   );
 };
 
