@@ -5,17 +5,6 @@ const Loading = () => {
   return (
     <div className="loadingContainer">
       <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
     </div>
   );
 };

@@ -21,7 +21,11 @@ const Categories = () => {
       <div className="imageProductDetailContainer">
         {categories.length > 0 ? (
           categories.map((category) => (
-            <ProductCardDetails key={category.id} title={category.category} />
+            <ProductCardDetails
+              key={category.id}
+              title={category.category}
+              imageURL={`https://loremflickr.com/299/363/${category.category}`}
+            />
           ))
         ) : (
           <Loading />

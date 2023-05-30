@@ -20,4 +20,15 @@ async function getTopSelling() {
   return response.data;
 }
 
-export { getProducts, getProduct, getCategories, getTopSelling };
+const getProductsByCategory = async (category) => {
+  const response = await conection.get(`/products/category/${category}`);
+  return response.data;
+};
+
+export {
+  getProducts,
+  getProduct,
+  getCategories,
+  getTopSelling,
+  getProductsByCategory,
+};
