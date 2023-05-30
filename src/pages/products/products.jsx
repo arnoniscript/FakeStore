@@ -45,12 +45,14 @@ const Products = () => {
         ) : (
           products?.map((product) => (
             <a href={`/products/${product.id}`}>
-              <ProductCardDetails
-                key={product.id}
-                imageURL={product.image}
-                price={product.price.toFixed(2)}
-                title={product.title}
-              />
+              <>
+                <ProductCardDetails
+                  key={product.id}
+                  imageURL={product.image}
+                  price={`R$ ${product.price.toFixed(2)}`}
+                  title={product.title}
+                />
+              </>
             </a>
           ))
         )}

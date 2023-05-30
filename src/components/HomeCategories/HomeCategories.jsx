@@ -1,8 +1,33 @@
 import "./styles.css";
 import { BsArrowRight } from "react-icons/bs";
 import React from "react";
+import ProductCardDetails from "../ProductCardDetails/ProductCardDetails";
+import { getCategories, getProducts } from "../../services/products";
+import { useState, useEffect } from "react";
 
 const HomeCategories = () => {
+  const [categories, setCategories] = useState();
+  const [exhibitedProducts, setExhibitedProducts] = useState();
+  const [products, setProducts] = useState();
+
+  useEffect(() => {
+    getProducts()
+      .then((response) => {
+        setProducts(response);
+        setExhibitedProducts(response.slice(0, 3));
+      })
+      .catch((err) => alert(err));
+    getCategories()
+      .then((response) => {
+        setCategories(response);
+      })
+      .catch((err) => alert(err));
+  }, []);
+  const getFirstImage = (category) => {
+    const result = products?.filter((el) => el.category === category);
+    return result[0]?.image;
+  };
+
   return (
     <body>
       <div className="principalwhite">
@@ -10,23 +35,15 @@ const HomeCategories = () => {
         <h2> Find what you are looking for </h2>
         <br></br>
         <div className="flex-container">
-          <figure className="flex-container-item">
-            <img src="03.jpg"></img>
-            <div className="itemname">Natural plants</div>
-            <div className="itemprice"> </div>
-          </figure>
-          <figure className="flex-container-item">
-            <img src="03.jpg"></img>
-            <div className="itemname">Plant acessories</div>
-            <div className="itemprice">
-              Horem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-          </figure>
-          <figure className="flex-container-item">
-            <img src="03.jpg"></img>
-            <div className="itemname">Artificial Plants</div>
-            <div className="itemprice"> </div>
-          </figure>
+          <div className="homeCategoriesDisplay">
+            {categories?.map((category) => (
+              <ProductCardDetails
+                key={category}
+                imageURL={getFirstImage(category)}
+                title={category}
+              />
+            ))}
+          </div>
         </div>
         <br></br>
         <div className="explore">

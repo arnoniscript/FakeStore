@@ -7,7 +7,7 @@ const ProductCardDetails = ({ imageURL, title, price }) => {
       </div>
       <div className="detailsProductDetails">
         <p>{title}</p>
-        <p>R$: {price}</p>
+        <p>{price}</p>
       </div>
     </div>
   );
