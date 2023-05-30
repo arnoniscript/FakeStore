@@ -1,15 +1,15 @@
 .search-bar-container {
-    padding: 20vh;
-    width: 40%;
-    margin: auto;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 200px;
     text-decoration: none;
+    justify-content: center;
 }
 
 .search-bar-container SearhResultsList {
     z-index: 100;
     text-decoration: none;
+   
 }

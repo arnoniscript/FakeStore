@@ -4,7 +4,7 @@ import "./CategoriesResultsList";
 export const CategoriesResults = ({ ele }) => {
   return (
     <div className="search-result">
-      <a href={`/products/categories/${ele.index}`}>{ele.index}</a>
+      <a href={`/products/category/${ele.category}`}>{ele.category}</a>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../../services/products";
+import { getCategories, getProducts } from "../../services/products";
 import {
   ProductCardDetails,
   Loading,
@@ -13,11 +13,21 @@ import "./styles.css";
 
 const Products = () => {
   const [products, setProducts] = useState();
+
   const [results, setResults] = useState([]);
-  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     getProducts()
       .then((response) => setProducts(response))
+      .catch((err) => alert(err));
+  }, []);
+
+  const [categories, setCategories] = useState([]);
+  const [results2, setResults2] = useState([]);
+
+  useEffect(() => {
+    getCategories()
+      .then((response) => setCategories(response))
       .catch((err) => alert(err));
   }, []);
 
@@ -30,8 +40,8 @@ const Products = () => {
             <SearchResultList results={results} />
           </div>
           <div className="search-bar-container">
-            <SearchCategoriesBar setResults={setCategories} />
-            <CategoriesResultsList results={categories} />
+            <SearchCategoriesBar setResults2={setResults2} />
+            <CategoriesResultsList results2={results2} />
           </div>
         </div>
         <div className="pageinformation">
