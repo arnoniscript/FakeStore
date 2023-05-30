@@ -17,12 +17,14 @@ const TopSelling = () => {
           <Loading />
         ) : (
           products?.map((product) => (
-            <CardBestSelling
-              key={product.id}
-              imageURL={product.image}
-              price={product.price.toFixed(2)}
-              title={product.title}
-            />
+            <a href={`/products/${product.id}`}>
+              <CardBestSelling
+                key={product.id}
+                imageURL={product.image}
+                price={product.price.toFixed(2)}
+                title={product.title}
+              />
+            </a>
           ))
         )}
       </div>

@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    text-decoration: none;
     
 
 }
@@ -26,6 +27,12 @@
     list-style: none;
     gap: 50px;
     font-family: 'Poppins', sans-serif;
+    color: rgba(30, 30, 30, 0.5);
+    text-decoration: none;
+}
+
+.container a {
+    text-decoration: none;
     color: rgba(30, 30, 30, 0.5);
 }
 

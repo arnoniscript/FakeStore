@@ -11,9 +11,11 @@ const Bestselling = () => {
         {" "}
         <p>Easiest way to healthy life by buying your favorite plants </p>
       </div>
-      <button id="mainbutton">
-        See more <BsArrowRight />
-      </button>
+      <a href="/products">
+        <button id="mainbutton">
+          See more <BsArrowRight />
+        </button>
+      </a>
     </div>
   );
 };
