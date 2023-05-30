@@ -51,6 +51,13 @@ border-radius: 12px;
 flex-wrap: wrap;
 
 }
+
+@media (width <= 1350px){
+.topselling :last-child {
+    display: none;
+}
+}
+
 .itemname {
     display: flex;
    

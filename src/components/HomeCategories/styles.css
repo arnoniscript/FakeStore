@@ -1,6 +1,6 @@
 .principalwhite {
     background-color: white;
-    height: 1024px;
+    height: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,12 @@ color: rgba(30, 30, 30, 0.5);
     gap: 5px;
     flex-direction: column;
 
+  }
+
+  .homeCategoriesDisplay {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
   }
 
   .flex-container-item img{

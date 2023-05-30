@@ -9,3 +9,39 @@
     padding-bottom: 70px;
   
 }
+
+.imageProductDetailContainer a{
+    text-decoration: none;
+}
+
+.toppingpage {
+display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    flex-direction: column;
+    text-decoration: none;
+    z-index: 40;
+}
+
+.pageinformation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.searchtopcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 300px;
+}
+
+.search-bar-container-text {
+    display: flex;
+    margin-left: 300px;
+}
+
+.search-bar-container-categories {
+    display: flex;
+   
+}
