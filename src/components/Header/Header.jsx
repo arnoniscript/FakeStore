@@ -6,7 +6,10 @@ import { BsListNested } from "react-icons/bs";
 const Header = () => {
   return (
     <header className="container">
-      <div id="logo">GREENMIND</div>
+      <div id="logo">
+        {" "}
+        <a href="/">GREENMIND</a>
+      </div>
       <ul>
         <li>
           <a href="/">Home</a>

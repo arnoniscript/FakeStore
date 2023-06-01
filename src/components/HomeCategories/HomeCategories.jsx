@@ -51,7 +51,9 @@ const HomeCategories = () => {
         </div>
         <br />
         <div className="explore">
-          Explore <BsArrowRight />
+          <a href="/products/categories">
+            Explore <BsArrowRight />
+          </a>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import {
   Product,
   Categories,
   ProductsByCategory,
+  ProductPost,
 } from "./pages";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/products/:id" element={<Product />} />
           <Route path="/products/categories" element={<Categories />} />
+          <Route path="/products/insertproduct" element={<ProductPost />} />
           <Route
             path="/products/category/:category"
             element={<ProductsByCategory />}
