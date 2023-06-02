@@ -21,24 +21,34 @@
     flex-direction: column;
     gap: 15px;
   }
-  
-  .flex-div > input,
-  .flex-div > textarea {
+
+  .flex-div-input {
     width: 800px;
     height: 64px;
     font-family: "Poppins";
-  
     background: #ffffff;
     border: 1px solid #c1dcdc;
     border-radius: 12px;
   }
+  
+  .flex-div > input[type="number"],
+.flex-div > textarea {
+  width: 100%;
+  font-family: "Poppins";
+  background: #ffffff;
+  border: 1px solid #c1dcdc;
+  border-radius: 12px;
+  padding: 12px;
+  color: #333333;
+  font-size: 16px;
+  box-sizing: border-box; /* Adicionado */
+}
   
   .flex-div > label {
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
     font-family: "Poppins";
-  
     color: rgba(30, 30, 30, 0.5);
   }
   
@@ -47,8 +57,102 @@
     max-height: 800px;
     font-family: "Poppins";
   }
+  
   .buttonsDiv {
     display: flex;
     gap: 30px;
     justify-content: flex-end;
   }
+  
+  .successMessage {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .errorMessage {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .flex-div select {
+    width: 800px;
+    height: 64px;
+    font-family: "Poppins";
+    background: #ffffff;
+    border: 1px solid #c1dcdc;
+    border-radius: 12px;
+    padding: 12px;
+    color: #333333;
+    font-size: 16px;
+  }
+  
+  .flex-div select:focus {
+    outline: none;
+    border-color: #1e90ff;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+  }
+  
+  .rating-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating-input label {
+    cursor: pointer;
+  }
+  
+  .rating-input input[type="radio"] {
+    display: none;
+  }
+  
+  .rating-input .star,
+  .rating-input .empty-star {
+    color: #ffc107; /* cor amarela */
+    font-size: 24px;
+    margin-right: 4px;
+  }
+  
+  .rating-input .empty-star {
+    color: #cccccc; /* cor cinza */
+  }
+  
+  .rating-input input[type="radio"]:checked ~ .star {
+    color: #ffc107; /* cor amarela */
+  }
+  
+  .inline-fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .flex-div.flex-div-quantity {
+    flex-basis: 200px;
+  }
+  
+  .button {
+    width: 200px;
+    height: 50px;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 500;
+    color: #1E1E1E;
+    background-color: #c1dcdc; /* Cor primária do projeto */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #a9c1c1; /* Cor primária escura do projeto */
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+  }
+  

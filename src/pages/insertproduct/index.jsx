@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { insertProduct } from "../../services/products";
 import "./styles.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ProductPost = () => {
   const [forms, setProducts] = useState({
@@ -17,6 +18,8 @@ const ProductPost = () => {
   });
 
   const [categories, setCategories] = useState([]);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -82,24 +85,46 @@ const ProductPost = () => {
       },
     };
 
-    insertProduct(productData);
-
-    setProducts({
-      title: "",
-      price: "",
-      category: "",
-      description: "",
-      image: "",
-      rating: {
-        rate: 0,
-        count: 0,
-      },
-    });
+    insertProduct(productData)
+      .then(() => {
+        setSuccessMessage(
+          `Produto "${forms.title}" adicionado com sucesso na categoria "${forms.category}".`
+        );
+        setErrorMessage("");
+        setProducts({
+          title: "",
+          price: "",
+          category: "",
+          description: "",
+          image: "",
+          rating: {
+            rate: 0,
+            count: 0,
+          },
+        });
+      })
+      .catch((error) => {
+        setErrorMessage(
+          "Erro ao adicionar o produto. Por favor, tente novamente."
+        );
+        setSuccessMessage("");
+        console.error("Erro ao adicionar o produto:", error);
+      });
   };
 
   return (
     <div className="newProductDiv">
       <h1>Novo Produto</h1>
+      {successMessage && (
+        <div className="successMessage">
+          <p>{successMessage}</p>
+        </div>
+      )}
+      {errorMessage && (
+        <div className="errorMessage">
+          <p>{errorMessage}</p>
+        </div>
+      )}
       <form className="flex-form" onSubmit={handleSubmit}>
         <div className="flex-div">
           <label>Título:</label>
@@ -109,6 +134,7 @@ const ProductPost = () => {
             value={forms.title}
             onChange={handleChange}
             required
+            className="flex-div-input"
           />
         </div>
         <div className="flex-div">
@@ -131,11 +157,46 @@ const ProductPost = () => {
           >
             <option value="">Selecione</option>
             {categories.map((category) => (
-              <option key={category.id} value={category.id}>
+              <option key={category.id} value={category.category}>
                 {category.category}
               </option>
             ))}
           </select>
+        </div>
+        <div className="inline-fields">
+          <div className="flex-div">
+            <label>Avaliação:</label>
+            <div className="rating-input">
+              {Array.from(Array(5)).map((_, index) => (
+                <label key={index}>
+                  <input
+                    type="radio"
+                    name="rating"
+                    value={index + 1}
+                    checked={forms.rating.rate === index + 1}
+                    onChange={handleRatingChange}
+                  />
+                  <span
+                    className={
+                      index < forms.rating.rate ? "star" : "empty-star"
+                    }
+                  >
+                    ★
+                  </span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="flex-div flex-div-quantity">
+            <label>Quantidade:</label>
+            <input
+              type="number"
+              name="count"
+              value={forms.rating.count}
+              onChange={handleQuantityChange}
+              required
+            />
+          </div>
         </div>
         <div className="flex-div">
           <label>Descrição:</label>
@@ -155,41 +216,14 @@ const ProductPost = () => {
             value={forms.image}
             onChange={handleImageURLChange}
             required
+            className="flex-div-input"
           />
           {forms.image && <img src={forms.image} alt="Imagem do Produto" />}
         </div>
-        <div className="flex-div">
-          <label>Avaliação:</label>
-          <input
-            type="range"
-            name="rating"
-            min="0"
-            max="5"
-            value={forms.rating.rate}
-            onChange={handleRatingChange}
-            required
-          />
-          <div className="rating-preview">
-            {Array.from(Array(forms.rating.rate)).map((_, index) => (
-              <span key={index} className="star-filled"></span>
-            ))}
-            {Array.from(Array(5 - forms.rating.rate)).map((_, index) => (
-              <span key={index} className="star"></span>
-            ))}
-          </div>
-        </div>
-        <div className="flex-div">
-          <label>Quantidade:</label>
-          <input
-            type="number"
-            name="count"
-            value={forms.rating.count}
-            onChange={handleQuantityChange}
-            required
-          />
-        </div>
         <div className="buttonsDiv">
-          <button type="submit">Adicionar Produto</button>
+          <button className="button" type="submit">
+            Adicionar Produto
+          </button>
         </div>
       </form>
     </div>
