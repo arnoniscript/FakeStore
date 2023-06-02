@@ -7,9 +7,18 @@
 <h2>Atenção:</h2>
 <p>Este projeto requer a conexão com o backend, que pode ser baixado neste <a href="https://github.com/arnonirethink/Back-end---FakeStore">repositório</a>.</p>
 
+<h2>Tecnologias Utilizadas:</h2>
+<li>ReactJS</li>
+<li>Axios</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>CORS</li>
+
 <h2>Como rodar?</h2>
 <ul>
-  <li>Siga as instruções para rodar o backend antes de rodar este repositório.</li>
+  <li> Certifique-se que o backend esteja rodando </li>
+  <li> Clone o presente repositório para o seu computador usando <code> git clone https://github.com/arnonirethink/FakeStore---Rethink </code> </li>
+  <li> Navegue até o diretório do projeto </li>
   <li>Dê o comando <code>npm i</code> para instalar todos os componentes e bibliotecas necessários.</li>
   <li>Dê o comando <code>npm start</code> e o acesso será liberado em <code>localhost:3000</code>.</li>
 </ul>
@@ -51,6 +60,10 @@
 
   
 </ul>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 
 
