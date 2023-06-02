@@ -24,9 +24,15 @@
   <li><code>/products/insertproduct</code> - Formulário de adição de produto</li>
   <p> O campo "categoria" puxa automaticamente as categorias cadastradas no backend através do endpoint "/products/categories"<p>
   <p> Ao adicionar a URL da imagem é aberto um campo de preview. </p>
+  <p> Ao clicar em "cancelar" uma lightbox de confirmação é exibida </p>
+  <p> Ao adicionar com sucesso um produto, uma caixa de diálogo é apresentada no centro da tela por 2 segundos confirmando o nome e a categoria do produto inserido </p>
+  
   
   <img width="400" alt="Captura de tela 2023-06-02 094132" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/7631db23-5370-4d5e-bb4e-886fe55d8e23">
 <img width="335" alt="Captura de tela 2023-06-02 094147" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/df7433b8-9de7-4627-a0ae-6d2f7af2633d">
+  <img width="740" alt="Captura de tela 2023-06-02 101125" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/552875e2-24c1-4443-978f-5fac2a6dae60">
+<img width="740" alt="Captura de tela 2023-06-02 102438" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/edfd8e35-96d2-44a5-8917-08e8c235799a">
+
 
 </ul>
 
