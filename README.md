@@ -24,8 +24,8 @@
   <p> O campo "categoria" puxa automaticamente as categorias cadastradas no backend através do endpoint "/products/categories"<p>
   <p> Ao adicionar a URL da imagem é aberto um campo de preview. </p>
   
-  <img width="430" alt="Captura de tela 2023-06-02 094132" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/7631db23-5370-4d5e-bb4e-886fe55d8e23">
-<img width="360" alt="Captura de tela 2023-06-02 094147" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/df7433b8-9de7-4627-a0ae-6d2f7af2633d">
+  <img width="400" alt="Captura de tela 2023-06-02 094132" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/7631db23-5370-4d5e-bb4e-886fe55d8e23">
+<img width="335" alt="Captura de tela 2023-06-02 094147" src="https://github.com/arnonirethink/FakeStore---Rethink/assets/124932698/df7433b8-9de7-4627-a0ae-6d2f7af2633d">
 
 </ul>
 
