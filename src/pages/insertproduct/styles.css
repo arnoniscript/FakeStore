@@ -64,19 +64,34 @@
     justify-content: flex-end;
   }
   
-  .successMessage {
-    background-color: #dff0d8;
-    color: #3c763d;
-    padding: 10px;
+  .successMessage,
+  .errorMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 9999;
+  }
+  
+  .successMessage p,
+  .errorMessage p {
     margin-bottom: 10px;
   }
   
-  .errorMessage {
-    background-color: #f2dede;
-    color: #a94442;
-    padding: 10px;
-    margin-bottom: 10px;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
   }
+  
   
   .flex-div select {
     width: 800px;
@@ -154,5 +169,43 @@
   .button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+  }
+  
+  .cancelConfirmation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .cancelConfirmation-content {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cancelConfirmation p {
+    margin-bottom: 10px;
+  }
+  
+  .cancelConfirmation button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cancelConfirmation button:hover {
+    background-color: #c82333;
   }
   
