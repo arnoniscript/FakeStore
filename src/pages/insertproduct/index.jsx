@@ -20,6 +20,7 @@ const ProductPost = () => {
   const [categories, setCategories] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
 
   useEffect(() => {
     axios
@@ -31,6 +32,17 @@ const ProductPost = () => {
         console.error("Erro ao obter as categorias:", error);
       });
   }, []);
+
+  useEffect(() => {
+    if (successMessage || errorMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage("");
+        setErrorMessage("");
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage, errorMessage]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -112,6 +124,29 @@ const ProductPost = () => {
       });
   };
 
+  const handleCancel = () => {
+    setIsConfirmationVisible(true);
+  };
+
+  const handleConfirmCancel = () => {
+    setIsConfirmationVisible(false);
+    setProducts({
+      title: "",
+      price: "",
+      category: "",
+      description: "",
+      image: "",
+      rating: {
+        rate: 0,
+        count: 0,
+      },
+    });
+  };
+
+  const handleCancelCancel = () => {
+    setIsConfirmationVisible(false);
+  };
+
   return (
     <div className="newProductDiv">
       <h1>Novo Produto</h1>
@@ -123,6 +158,15 @@ const ProductPost = () => {
       {errorMessage && (
         <div className="errorMessage">
           <p>{errorMessage}</p>
+        </div>
+      )}
+      {isConfirmationVisible && (
+        <div className="cancelConfirmation">
+          <div className="cancelConfirmation-content">
+            <p>Deseja cancelar o envio?</p>
+            <button onClick={handleConfirmCancel}>Sim</button>
+            <button onClick={handleCancelCancel}>Não</button>
+          </div>
         </div>
       )}
       <form className="flex-form" onSubmit={handleSubmit}>
@@ -223,6 +267,9 @@ const ProductPost = () => {
         <div className="buttonsDiv">
           <button className="button" type="submit">
             Adicionar Produto
+          </button>
+          <button className="button" type="button" onClick={handleCancel}>
+            Cancelar Envio
           </button>
         </div>
       </form>
