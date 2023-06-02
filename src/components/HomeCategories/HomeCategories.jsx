@@ -39,17 +39,21 @@ const HomeCategories = () => {
         <div className="flex-container">
           <div className="homeCategoriesDisplay">
             {categories.map((category) => (
-              <ProductCardDetails
-                key={category.id}
-                imageURL={getFirstImage(category.category)}
-                title={category.category}
-              />
+              <a href={`/products/category/${category.category}`}>
+                <ProductCardDetails
+                  key={category.id}
+                  imageURL={getFirstImage(category.category)}
+                  title={category.category}
+                />
+              </a>
             ))}
           </div>
         </div>
         <br />
         <div className="explore">
-          Explore <BsArrowRight />
+          <a href="/products/categories">
+            Explore <BsArrowRight />
+          </a>
         </div>
       </div>
     </div>

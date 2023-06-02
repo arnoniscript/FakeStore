@@ -1,12 +1,11 @@
 import React from "react";
 import "./CategoriesResults";
 import { CategoriesResults } from "./CategoriesResults";
-import { getProducts } from "../../services/products";
 
-export const CategoriesResultsList = ({ results }) => {
+export const CategoriesResultsList = ({ results2 }) => {
   return (
     <div className="results-list">
-      {results?.map((ele, index) => {
+      {results2?.map((ele, index) => {
         return <CategoriesResults key={index} ele={ele} />;
       })}
     </div>

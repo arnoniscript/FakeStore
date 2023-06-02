@@ -2,27 +2,28 @@ import { useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import "./CategoriesBar.css";
 
-export const SearchCategoriesBar = ({ setResults }) => {
-  const [input, setInput] = useState("");
+export const SearchCategoriesBar = ({ setResults2 }) => {
+  const [inputCategory, setInputCategory] = useState("");
 
   const fetchData = (val) => {
-    fetch(`http://localhost:4040/categories`)
+    fetch(`http://localhost:4040/products/categories`)
       .then((res) => res.json())
       .then((out) => {
-        const results = out.filter((ele) => {
+        const categories = out.filter((ele) => {
           return (
             val &&
             ele &&
-            ele.title &&
-            ele.title.toLowerCase().includes(val.toLowerCase())
+            ele.category &&
+            ele.category.toLowerCase().includes(val.toLowerCase())
           );
         });
-        setResults(results);
+
+        setResults2(categories);
       });
   };
 
   const handleChange = (val) => {
-    setInput(val);
+    setInputCategory(val);
     fetchData(val);
   };
   return (
@@ -30,11 +31,10 @@ export const SearchCategoriesBar = ({ setResults }) => {
       <input
         placeholder="Selecione a Categoria"
         type="text"
-        value={input}
+        value={inputCategory}
         onChange={(e) => handleChange(e.target.value)}
       />
       <div id="icondiv">
-        {" "}
         <AiFillCaretDown id="search-icon" />
       </div>
     </div>

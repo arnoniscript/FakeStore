@@ -18,6 +18,7 @@ font-weight: 500;
 font-size: 32px;
 align-self: top;
 justify-content: space-around;
+text-decoration: none;
 }
 
 .principalwhite h2 {
@@ -73,5 +74,6 @@ color: rgba(30, 30, 30, 0.5);
     color: #1E1E1E;
     align-items: center;
     justify-items: center;
+    text-decoration: none;
     
   }
