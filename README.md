@@ -10,6 +10,7 @@
 <h2>Como rodar?</h2>
 <ul>
   <li>Siga as instruções para rodar o backend antes de rodar este repositório.</li>
+  <li>Dê o comando <code>npm i</code> para instalar todos os componentes e bibliotecas necessários.</li>
   <li>Dê o comando <code>npm start</code> e o acesso será liberado em <code>localhost:3000</code>.</li>
 </ul>
 
